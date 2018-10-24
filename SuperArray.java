@@ -50,7 +50,13 @@ public class SuperArray {
   }
 
   public String set(int index, String str){
-    
+    if (index < 0 || index >= size()){
+      System.out.println("index out of range");
+      return null;
+    }
+    String old = data[index];
+    data[index] = str;
+    return old;
   }
 
 }
