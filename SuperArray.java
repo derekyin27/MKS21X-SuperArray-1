@@ -3,6 +3,9 @@ public class SuperArray {
   private String[] data;
   private int size;
 
+
+  //Phase 1
+
   public SuperArray(){
     data = new String[10];
     size = 0;
@@ -63,12 +66,39 @@ public class SuperArray {
     return old;
   }
 
+
+  //Phase 2
+
   private void resize(){
     String[] newData = new String[size*2];
     for(int i = 0;i < size;i++){
       newData[i] = data[i];
     }
     data = newData;
+  }
+
+
+  //Phase 3
+
+  public boolean contains(String target){
+    for(int i = 0;i < size;i++){
+      if (data[i].equals(target)) return true;
+    }
+    return false;
+  }
+
+  public int indexOf(String target){
+    for(int i = 0;i < size;i++){
+      if (data[i].equals(target)) return i;
+    }
+    return -1;
+  }
+
+  public int lastIndexOf(String target){
+    for(int i = size-1;i >= 0;i--){
+      if (data[i].equals(target)) return i;
+    }
+    return -1;
   }
 
 }
