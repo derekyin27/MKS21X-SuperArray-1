@@ -101,4 +101,11 @@ public class SuperArray {
     return -1;
   }
 
+  public void add(int index, String str){
+    if (index < 0 || index > size()){
+      System.out.println("Error: index out of range");
+      return;
+    }
+  }
+
 }
