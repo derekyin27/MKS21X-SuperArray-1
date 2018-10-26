@@ -106,7 +106,7 @@ public class SuperArray {
       System.out.println("Error: index out of range");
       return;
     }
-
+    if (data.length==size) resize();
     for(int i = size-1;i>=index;i--){
       data[i+1]=data[i];
     }
