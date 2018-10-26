@@ -106,6 +106,39 @@ public class SuperArray {
       System.out.println("Error: index out of range");
       return;
     }
+
+    for(int i = size-1;i>=index;i--){
+      data[i+1]=data[i];
+    }
+    data[index] = str;
+    size++;
+  }
+
+  public String remove(int index){
+    if (index < 0 || index > size()){
+      System.out.println("Error: index out of range");
+      return null;
+    }
+    String ans = data[index];
+    for(int i = index+1;i<size;i++){
+      data[i-1]=data[i];
+    }
+    data[size-1]=null;
+    size--;
+    return ans;
+  }
+
+  public boolean remove(String str){
+    for(int i = 0;i < size;i++){
+      if (data[i].equals(str)){
+        for(int index = i+1;index<size;index++){
+          data[index-1]=data[index];
+        }
+        data[size-1]=null;
+        size--;
+      }
+    }
+    return false;
   }
 
 }
